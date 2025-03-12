@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Announcement>
+
+<h2>Announcements</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li><strong>@item.Title</strong> - @item.Content (@item.DatePosted)</li>
+    }
+</ul>
+
+<form method="post" asp-action="Create">
+    <input type="text" name="title" placeholder="Title" required />
+    <textarea name="content" placeholder="Content" required></textarea>
+    <button type="submit">Post</button>
+</form>
